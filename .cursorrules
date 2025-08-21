@@ -1,0 +1,88 @@
+# Claimb.lol - Simple Development Rules
+
+## 🎯 Project Overview
+Next.js web app serving as landing site for Claimb macOS app and LoL performance analyser widget. Uses TypeScript, Tailwind CSS, and Riot Games API. Keep it SIMPLE and lightweight.
+
+## 🏗️ Code Organization
+- Components: `/components` directory, PascalCase naming (e.g., `LoLAnalyser.tsx`)
+- Services: `/services` directory, camelCase naming (e.g., `riotApi.ts`)
+- Types: `/types` directory, camelCase naming (e.g., `lol.ts`)
+- Pages: `/app` directory, Next.js App Router structure
+
+## 🎨 Design System (MUST FOLLOW)
+- Use ONLY colors defined in `tailwind.config.js` design system
+- Primary: Teal (`#66cc99`) for main elements and positive metrics
+- Success: Teal green for positive performance
+- Warning: Orange (`#ff9f0a`) for neutral/cautionary metrics
+- Error: Orange red (`#d8674a`) for negative metrics
+- Backgrounds: Black/gray with glass effects
+- Use `.card`, `.btn-primary`, `.btn-secondary`, `.input-field` utility classes
+
+## 🔧 TypeScript Standards
+- Use strict TypeScript configuration
+- Define clear interfaces for all data structures
+- Use named exports for components, default exports for services
+- Use absolute imports with `@/` prefix when possible
+- NEVER use `any` type
+
+## ⚛️ React Patterns (Learning Focus)
+- Use React hooks for state management
+- Define proper TypeScript interfaces for component props
+- Use `useState` for local state, avoid prop drilling
+- Use `useEffect` for side effects, clean up properly
+- Always show loading states and error messages
+
+## 🚨 API Integration (Critical)
+- Always wrap API calls in try-catch blocks
+- Implement client-side rate limiting for Riot API (100 requests per 2 minutes)
+- Handle all HTTP status codes appropriately
+- Provide fallback data when API calls fail
+- Store API keys in environment variables only
+
+## 📊 Rate Limiting Strategy
+- Add delays between API calls (100ms minimum)
+- Track request timestamps in localStorage
+- Show clear error messages when limits are hit
+- Design UI to avoid unnecessary API calls
+
+## 🧪 Testing (Keep Simple)
+- Basic component rendering tests
+- Service function validation
+- API error handling tests
+- Focus on "does it work" validation
+
+## 🚀 Development Workflow
+1. Plan the feature (keep it simple)
+2. Write clean, typed code following these rules
+3. Test manually (click around, test error cases)
+4. Check TypeScript and ESLint
+5. Deploy to Vercel
+
+## ❌ What NOT to Do
+- Don't over-engineer solutions
+- Don't add features unless absolutely necessary
+- Don't use external libraries unless essential
+- Don't hardcode colors or values
+- Don't ignore error handling
+
+## ✅ What TO Do
+- Keep components small and focused
+- Use your design system colors consistently
+- Handle errors gracefully with user feedback
+- Write readable, maintainable code
+- Test the happy path and error cases
+
+## 🔑 Key Principles
+- SIMPLICITY over complexity
+- MAINTAINABILITY over cleverness
+- USER EXPERIENCE over fancy features
+- LEARNING over perfection
+- CONSISTENCY over variety
+
+## 📚 Learning Resources
+- React hooks: https://react.dev/reference/react/hooks
+- TypeScript: https://www.typescriptlang.org/docs/
+- Tailwind: https://tailwindcss.com/docs
+- Next.js: https://nextjs.org/docs
+
+Remember: This is a hobby project. Keep it fun, keep it simple, and focus on making it work well rather than making it perfect.
