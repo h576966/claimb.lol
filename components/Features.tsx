@@ -1,34 +1,34 @@
 export function Features() {
   const features = [
     {
-      title: 'Performance Analysis',
-      description: 'Deep dive into your match history with KDA, CS, damage, and vision analysis.',
-      icon: '📊'
+      title: 'AI-Powered Coaching',
+      description: 'Get personalized post-game analysis with specific timing insights and actionable advice tailored to your performance.',
+      icon: '🧠'
     },
     {
-      title: 'Champion Recommendations',
-      description: 'AI-powered suggestions based on your playstyle and current meta.',
+      title: 'Privacy-First Design',
+      description: 'All your data stays on your iPhone. No servers, no tracking, complete privacy protection.',
+      icon: '🔒'
+    },
+    {
+      title: 'Local-First Performance',
+      description: 'Works offline after initial sync. No internet required for coaching insights and match analysis.',
+      icon: '⚡'
+    },
+    {
+      title: 'Champion Pool Analysis',
+      description: 'Track your champion performance, identify your best picks, and get optimization insights.',
       icon: '🎯'
     },
     {
-      title: 'Role Optimization',
-      description: 'Discover your best roles and get role-specific improvement tips.',
-      icon: '⚔️'
+      title: 'Timeline Integration',
+      description: 'Early game analysis with exact minute marks for specific feedback and improvement opportunities.',
+      icon: '⏱️'
     },
     {
-      title: 'Personalized Coaching',
-      description: 'Get actionable advice tailored to your performance patterns.',
-      icon: '🎓'
-    },
-    {
-      title: 'Trend Analysis',
-      description: 'Track your improvement over time with performance trends.',
-      icon: '📈'
-    },
-    {
-      title: 'Offline Access',
-      description: 'All data stored locally on your Mac for privacy and performance.',
-      icon: '💾'
+      title: 'iPhone Optimized',
+      description: 'Designed for one-handed mobile use with Apple Watch-like interface and intuitive navigation.',
+      icon: '📱'
     }
   ]
 
@@ -37,11 +37,11 @@ export function Features() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Why Choose Claimb?
+            Built for iPhone, Designed for Privacy
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Built specifically for League of Legends players who want to improve their game
-            and climb the ranked ladder with data-driven insights.
+            The only League of Legends companion app that puts your privacy first while delivering
+            powerful AI coaching and performance insights directly on your iPhone.
           </p>
         </div>
 
@@ -62,19 +62,24 @@ export function Features() {
         <div className="text-center mt-16">
           <div className="bg-primary-50 rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to improve your game?
+              Ready to climb the ranked ladder?
             </h3>
             <p className="text-gray-600 mb-6">
-              Download Claimb for macOS and start your journey to becoming a better League of Legends player.
+              Join the TestFlight beta and experience the future of League of Legends coaching.
+              Your personal coach, always in your pocket.
             </p>
             <a
-              href="https://apps.apple.com/app/claimb/id1234567890"
+              href="https://testflight.apple.com/join/your-testflight-link"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-lg px-8 py-3"
+              className="btn-primary text-lg px-8 py-3 flex items-center justify-center gap-2 mx-auto w-fit"
             >
-              Download Now
+              <span>📱</span>
+              Join TestFlight Beta
             </a>
+            <p className="text-sm text-gray-500 mt-4">
+              Coming to App Store soon • iOS 18+ required
+            </p>
           </div>
         </div>
       </div>

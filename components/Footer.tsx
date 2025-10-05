@@ -8,52 +8,52 @@ export function Footer() {
               Claimb.lol
             </h3>
             <p className="text-gray-300 mb-4 max-w-md">
-              The ultimate League of Legends companion app for macOS.
-              Get personalized insights, champion recommendations, and coaching to improve your game.
+              Your personal League of Legends coach in your pocket.
+              Privacy-focused, local-first iOS app with AI coaching and performance insights.
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://apps.apple.com/app/claimb/id1234567890"
+                href="https://testflight.apple.com/join/your-testflight-link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-400 hover:text-primary-300 transition-colors"
               >
-                App Store
+                TestFlight Beta
               </a>
               <a
-                href="#"
-                className="text-primary-400 hover:text-primary-300 transition-colors"
-              >
-                Documentation
-              </a>
-              <a
-                href="#"
+                href="mailto:support@claimb.lol"
                 className="text-primary-400 hover:text-primary-300 transition-colors"
               >
                 Support
+              </a>
+              <a
+                href="#faq"
+                className="text-primary-400 hover:text-primary-300 transition-colors"
+              >
+                FAQ
               </a>
             </div>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Features</h4>
+            <h4 className="text-lg font-semibold mb-4">iOS App Features</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>Performance Analysis</li>
-              <li>Champion Recommendations</li>
-              <li>Role Optimization</li>
-              <li>AI Coaching</li>
-              <li>Trend Analysis</li>
+              <li>AI-Powered Coaching</li>
+              <li>Privacy-First Design</li>
+              <li>Offline Capability</li>
+              <li>Timeline Analysis</li>
+              <li>Champion Pool Insights</li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Resources</h4>
             <ul className="space-y-2 text-gray-300">
+              <li>TestFlight Beta</li>
               <li>Privacy Policy</li>
               <li>Terms of Service</li>
-              <li>API Documentation</li>
-              <li>Changelog</li>
-              <li>Community</li>
+              <li>iOS 18+ Required</li>
+              <li>Support</li>
             </ul>
           </div>
         </div>

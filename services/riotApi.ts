@@ -3,24 +3,11 @@ import { Summoner, Match, Region } from '@/types/lol'
 
 const RIOT_API_KEY = process.env.NEXT_PUBLIC_RIOT_API_KEY
 
-// Available regions
+// Available regions (limited to main regions)
 export const REGIONS: Region[] = [
-  { id: 'na1', name: 'North America', endpoint: 'americas.api.riotgames.com' },
-  { id: 'euw1', name: 'Europe West', endpoint: 'europe.api.riotgames.com' },
-  { id: 'eun1', name: 'Europe Nordic & East', endpoint: 'europe.api.riotgames.com' },
-  { id: 'kr', name: 'Korea', endpoint: 'asia.api.riotgames.com' },
-  { id: 'br1', name: 'Brazil', endpoint: 'americas.api.riotgames.com' },
-  { id: 'la1', name: 'LAN', endpoint: 'americas.api.riotgames.com' },
-  { id: 'la2', name: 'LAS', endpoint: 'americas.api.riotgames.com' },
-  { id: 'oc1', name: 'Oceania', endpoint: 'americas.api.riotgames.com' },
-  { id: 'tr1', name: 'Turkey', endpoint: 'europe.api.riotgames.com' },
-  { id: 'ru', name: 'Russia', endpoint: 'europe.api.riotgames.com' },
-  { id: 'jp1', name: 'Japan', endpoint: 'asia.api.riotgames.com' },
-  { id: 'ph2', name: 'Philippines', endpoint: 'asia.api.riotgames.com' },
-  { id: 'sg2', name: 'Singapore', endpoint: 'asia.api.riotgames.com' },
-  { id: 'th2', name: 'Thailand', endpoint: 'asia.api.riotgames.com' },
-  { id: 'tw2', name: 'Taiwan', endpoint: 'asia.api.riotgames.com' },
-  { id: 'vn2', name: 'Vietnam', endpoint: 'asia.api.riotgames.com' },
+  { id: 'euw1', name: 'Europe West (EUW)', endpoint: 'europe.api.riotgames.com' },
+  { id: 'eun1', name: 'Europe Nordic & East (EUNE)', endpoint: 'europe.api.riotgames.com' },
+  { id: 'na1', name: 'North America (NA)', endpoint: 'americas.api.riotgames.com' },
 ]
 
 class RiotApiService {
@@ -72,7 +59,7 @@ class RiotApiService {
       if (error.response?.status === 429) {
         throw new Error('Rate limit exceeded. Please try again in a few minutes.')
       } else if (error.response?.status === 404) {
-        throw new Error('Summoner not found. Please check the name and region.')
+        throw new Error('Summoner not found. Please check the name and tag.')
       } else if (error.response?.status === 403) {
         throw new Error('API key invalid or expired.')
       } else if (error.code === 'ECONNABORTED') {
@@ -84,7 +71,7 @@ class RiotApiService {
   }
 
   /**
-   * Get summoner information
+   * Get summoner information by name and tag using the correct API flow
    */
   async getSummoner(summonerName: string, region: string): Promise<Summoner> {
     const regionData = REGIONS.find(r => r.id === region)
@@ -92,8 +79,41 @@ class RiotApiService {
       throw new Error('Invalid region')
     }
 
-    const url = `https://${regionData.id}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${encodeURIComponent(summonerName)}`
-    return this.makeRequest(url, region)
+    // Split summoner name into name and tag
+    const [name, tag] = summonerName.split('#')
+    if (!tag) {
+      throw new Error('Please enter summoner name in format: Name#Tag (e.g., Faker#KR1)')
+    }
+
+    try {
+      // Step 1: Get PUUID from account-v1 API (global endpoint)
+      console.log('Getting PUUID from account-v1 API...')
+      const accountUrl = `https://${regionData.endpoint}/riot/account/v1/accounts/by-riot-id/${encodeURIComponent(name)}/${encodeURIComponent(tag)}`
+      const accountData = await this.makeRequest(accountUrl, region)
+
+      if (!accountData.puuid) {
+        throw new Error('Failed to get summoner PUUID')
+      }
+
+      // Step 2: Get summoner details using PUUID (region-specific endpoint)
+      console.log('Getting summoner details from summoner-v4 API...')
+      const summonerUrl = `https://${regionData.id}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${accountData.puuid}`
+      const summonerData = await this.makeRequest(summonerUrl, region)
+
+      // Combine the data
+      return {
+        ...summonerData,
+        gameName: accountData.gameName,
+        tagLine: accountData.tagLine,
+        puuid: accountData.puuid
+      }
+
+    } catch (error: any) {
+      if (error.response?.status === 404) {
+        throw new Error('Summoner not found. Please check the name, tag, and region.')
+      }
+      throw error
+    }
   }
 
   /**

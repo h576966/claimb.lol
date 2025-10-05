@@ -5,6 +5,7 @@ import { Header } from '@/components/Header'
 import { Hero } from '@/components/Hero'
 import { LoLAnalyser } from '@/components/LoLAnalyser'
 import { Features } from '@/components/Features'
+import { FAQ } from '@/components/FAQ'
 import { Footer } from '@/components/Footer'
 
 export default function HomePage() {
@@ -26,6 +27,7 @@ export default function HomePage() {
         )}
 
         <Features />
+        <FAQ />
       </main>
 
       <Footer />

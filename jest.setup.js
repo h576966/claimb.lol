@@ -56,3 +56,45 @@ global.console = {
   warn: jest.fn(),
   error: jest.fn(),
 }
+
+// Extend Jest matchers
+expect.extend({
+  toBeInTheDocument(received) {
+    const pass = received !== null && received !== undefined
+    if (pass) {
+      return {
+        message: () => `expected ${received} not to be in the document`,
+        pass: true,
+      }
+    } else {
+      return {
+        message: () => `expected ${received} to be in the document`,
+        pass: false,
+      }
+    }
+  },
+  toHaveClass(received, ...expectedClasses) {
+    if (!received || !received.classList) {
+      return {
+        message: () => `expected ${received} to have classList`,
+        pass: false,
+      }
+    }
+
+    const pass = expectedClasses.every(className =>
+      received.classList.contains(className)
+    )
+
+    if (pass) {
+      return {
+        message: () => `expected ${received} not to have classes ${expectedClasses.join(', ')}`,
+        pass: true,
+      }
+    } else {
+      return {
+        message: () => `expected ${received} to have classes ${expectedClasses.join(', ')}`,
+        pass: false,
+      }
+    }
+  },
+})

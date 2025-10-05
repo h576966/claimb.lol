@@ -1,7 +1,7 @@
-# Claimb.lol - Simple Development Rules
+# Claimb.lol - League of Legends Landing Page & Web Analyzer
 
 ## 🎯 Project Overview
-Next.js web app serving as landing site for Claimb macOS app and LoL performance analyser widget. Uses TypeScript, Tailwind CSS, and Riot Games API. Keep it SIMPLE and lightweight.
+Next.js web application serving as landing site for Claimb iOS app and LoL performance analyzer widget. Uses TypeScript, Tailwind CSS, and Riot Games API. Keep it SIMPLE and maintainable.
 
 ## 🏗️ Code Organization
 - Components: `/components` directory, PascalCase naming (e.g., `LoLAnalyser.tsx`)
@@ -11,11 +11,11 @@ Next.js web app serving as landing site for Claimb macOS app and LoL performance
 
 ## 🎨 Design System (MUST FOLLOW)
 - Use ONLY colors defined in `tailwind.config.js` design system
-- Primary: Teal (`#66cc99`) for main elements and positive metrics
-- Success: Teal green for positive performance
-- Warning: Orange (`#ff9f0a`) for neutral/cautionary metrics
-- Error: Orange red (`#d8674a`) for negative metrics
-- Backgrounds: Black/gray with glass effects
+- Primary: Blue tones for main elements and positive metrics
+- Success: Green for positive performance
+- Warning: Orange for neutral/cautionary metrics
+- Error: Red for negative metrics
+- Backgrounds: Light gray gradients with glass effects
 - Use `.card`, `.btn-primary`, `.btn-secondary`, `.input-field` utility classes
 
 ## 🔧 TypeScript Standards
@@ -23,9 +23,9 @@ Next.js web app serving as landing site for Claimb macOS app and LoL performance
 - Define clear interfaces for all data structures
 - Use named exports for components, default exports for services
 - Use absolute imports with `@/` prefix when possible
-- NEVER use `any` type
+- NEVER use `any` type - use proper typing or `unknown`
 
-## ⚛️ React Patterns (Learning Focus)
+## ⚛️ React Patterns
 - Use React hooks for state management
 - Define proper TypeScript interfaces for component props
 - Use `useState` for local state, avoid prop drilling

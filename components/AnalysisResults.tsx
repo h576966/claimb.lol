@@ -94,23 +94,37 @@ export function AnalysisResults({ stats }: AnalysisResultsProps) {
         <RoleAnalysis roles={stats.rolePerformance} />
       </div>
 
-      {/* Download CTA */}
-      <div className="text-center p-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl">
-        <h3 className="text-2xl font-bold text-text-900 dark:text-text-50 mb-4">
-          Want deeper insights?
-        </h3>
-        <p className="text-text-600 dark:text-text-400 mb-6 max-w-2xl mx-auto">
-          Download the full Claimb macOS app for comprehensive analysis, champion recommendations,
-          and personalized coaching to help you climb the ranked ladder.
+      {/* iOS App CTA */}
+      <div className="text-center p-8 bg-gradient-to-r from-primary-50 to-primary-100 rounded-xl border border-primary-200">
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center">
+            <span className="text-white text-xl">📱</span>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900">
+              Want AI Coaching & More?
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Get the full iOS app on TestFlight
+            </p>
+          </div>
+        </div>
+        <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+          This web preview shows basic performance analysis. The full iOS app includes AI-powered coaching,
+          timeline analysis, offline access, and privacy-first design for the complete Claimb experience.
         </p>
         <a
-          href="https://apps.apple.com/app/claimb/id1234567890"
+          href="https://testflight.apple.com/join/your-testflight-link"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary text-lg px-8 py-3"
+          className="inline-flex items-center gap-2 bg-primary-600 text-white px-8 py-3 rounded-lg hover:bg-primary-700 transition-colors text-lg"
         >
-          Download Claimb for macOS
+          <span>📱</span>
+          Get Full App on TestFlight
         </a>
+        <p className="text-sm text-gray-500 mt-4">
+          iOS 18+ required • Coming to App Store soon
+        </p>
       </div>
     </div>
   )
