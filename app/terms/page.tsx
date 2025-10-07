@@ -53,7 +53,7 @@ export default function TermsPage() {
                 Riot Games API Compliance
               </h2>
               <p className='text-gray-800 mb-4'>
-                Claimb uses Riot Games' official API in compliance with their
+                Claimb uses Riot Games&apos; official API in compliance with their
                 Terms of Service:
               </p>
               <ul className='list-disc list-inside text-gray-800 space-y-2 mb-6'>
@@ -114,7 +114,7 @@ export default function TermsPage() {
                 Limitation of Liability
               </h2>
               <p className='text-gray-800 mb-4'>
-                Claimb is provided "as is" without warranties of any kind. We
+                Claimb is provided &quot;as is&quot; without warranties of any kind. We
                 are not responsible for:
               </p>
               <ul className='list-disc list-inside text-gray-800 space-y-2 mb-6'>

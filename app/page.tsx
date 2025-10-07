@@ -16,6 +16,7 @@ export default function HomePage() {
               {/* App Icon */}
               <div className='mb-8 flex justify-center lg:justify-start'>
                 <div className='w-24 h-24 rounded-2xl shadow-lg overflow-hidden'>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src='/images/AppIcon.png'
                     alt='Claimb App Icon'
@@ -111,6 +112,7 @@ export default function HomePage() {
             <div className='flex justify-center lg:justify-end'>
               <div className='relative'>
                 <div className='w-80 h-auto rounded-3xl shadow-2xl overflow-hidden bg-gray-800'>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src='/images/app-screenshot.png'
                     alt='Claimb App Screenshot'

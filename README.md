@@ -13,6 +13,7 @@ This project serves as the official landing page for the Claimb iOS coaching app
 ## ✨ Features
 
 ### Landing Page
+
 - Modern, responsive design with Tailwind CSS
 - Hero section with app icon and clear call-to-action
 - Feature highlights with icons and descriptions
@@ -20,6 +21,7 @@ This project serves as the official landing page for the Claimb iOS coaching app
 - Dark theme optimized for the gaming audience
 
 ### Key Highlights
+
 - **AI-Powered Coaching**: Personalized insights with specific timing feedback
 - **Privacy-First Design**: All data stays on your iPhone - no servers, no tracking
 - **iOS 18+ Optimized**: Built specifically for modern iOS devices
@@ -42,17 +44,20 @@ This project serves as the official landing page for the Claimb iOS coaching app
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd claimb.lol
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Run the development server**
+
    ```bash
    npm run dev
    ```
@@ -67,13 +72,16 @@ Claimb is a **local-first** League of Legends companion app designed for iPhone 
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
+
 1. Connect your GitHub repository to Vercel
 2. Deploy automatically on push to main branch
 
 ### Static Export
+
 ```bash
 npm run build
 ```
+
 The `out/` directory contains static files for any hosting service.
 
 ## 🏗️ Project Structure
@@ -102,7 +110,9 @@ claimb.lol/
 ## 🔧 Customization
 
 ### Design System
+
 The landing page uses a custom Tailwind design system with:
+
 - **Primary Colors**: Blue tones for main elements and CTAs
 - **Dark Theme**: Optimized for the gaming audience
 - **Responsive Design**: Mobile-first approach
@@ -141,4 +151,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 Built with ❤️ for the League of Legends community
-

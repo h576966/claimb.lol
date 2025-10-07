@@ -34,6 +34,12 @@ export function Footer() {
             >
               Privacy
             </a>
+            <a
+              href='/terms'
+              className='text-primary-400 hover:text-primary-300 transition-colors'
+            >
+              Terms
+            </a>
           </div>
 
           <div className='border-t border-gray-800 pt-6 text-gray-400'>

@@ -23,7 +23,7 @@ export default function SupportPage() {
                   Get Help
                 </h2>
                 <p className='text-gray-800 mb-6'>
-                  Need assistance with Claimb? We're here to help you get the
+                  Need assistance with Claimb? We&apos;re here to help you get the
                   most out of your League of Legends coaching experience.
                 </p>
 
@@ -98,7 +98,7 @@ export default function SupportPage() {
                         Feature Requests
                       </h3>
                       <p className='text-gray-800 text-sm'>
-                        Have an idea? We'd love to hear your suggestions
+                        Have an idea? We&apos;d love to hear your suggestions
                       </p>
                     </div>
                   </div>
@@ -113,10 +113,10 @@ export default function SupportPage() {
                 <div className='space-y-4'>
                   <div className='border-l-4 border-primary-500 pl-4'>
                     <h3 className='font-semibold text-gray-900'>
-                      Can't find my summoner?
+                      Can&apos;t find my summoner?
                     </h3>
                     <p className='text-gray-800 text-sm'>
-                      Make sure you're using the correct region and your Riot ID
+                      Make sure you&apos;re using the correct region and your Riot ID
                       format (Name#Tag)
                     </p>
                   </div>

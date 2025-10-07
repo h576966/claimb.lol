@@ -38,7 +38,7 @@ export default function PrivacyPage() {
               <p className='text-gray-800'>
                 <strong>Important:</strong> We do not collect, store, or have
                 access to any personal information, private messages, payment
-                details, or any data not publicly available through Riot's API.
+                details, or any data not publicly available through Riot&apos;s API.
               </p>
             </section>
 
