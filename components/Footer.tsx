@@ -15,6 +15,18 @@ export function Footer() {
 
           <div className='flex justify-center space-x-6 mb-6'>
             <a
+              href='/'
+              className='text-primary-400 hover:text-primary-300 transition-colors'
+            >
+              LoL
+            </a>
+            <a
+              href='/tft'
+              className='text-primary-400 hover:text-primary-300 transition-colors'
+            >
+              TFT
+            </a>
+            <a
               href={APP_CONFIG.TESTFLIGHT_URL}
               target='_blank'
               rel='noopener noreferrer'

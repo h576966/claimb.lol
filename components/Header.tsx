@@ -16,7 +16,13 @@ export function Header() {
               href='/'
               className='text-gray-300 hover:text-primary-400 transition-colors'
             >
-              Home
+              LoL
+            </a>
+            <a
+              href='/tft'
+              className='text-gray-300 hover:text-primary-400 transition-colors'
+            >
+              TFT
             </a>
             <a
               href='/privacy'
